@@ -6,8 +6,6 @@ jobs:
       deploy:
         provider: elasticbeanstalk
         skip_cleanup: true
-        edge:
-          branch: eb-updates
         access_key_id:
           secure: secure: "VX6KdMxxm8xeIAPdIGJS7wyu7lhzbJHzzdsEVTm0dVDv3ZM7/CeLOdbfDwlBSOaGgPIfmQ5KUuKhWhZgRIz7Nw1Mrzzn8GteDdFMWg64WwgOL+f3GVquYyB7BjYdcdbqddD9BQ7dl9SrMG3/3+X362y7X4KQsxhOeetHzIuppHIgOkCLru/XzafA4B/w1ATCXD3arySFnPK5bWMddOlnQgqpV5oM5YIciZmLLekMbtaA81DhVKJiMoBfEtfv+7VlWjRZr0obRVPgPG4GTpWjU3XPC3/k5y1+QPMyJULC7Iqe2qgel4DYE0PD7ZHCsFV1Vis9dhLtfkvll4Pm1u6z1T2bW8iY69eqIaIyJZtCV5+0zRkCFdIVE99qcG3YVS5MlbRHW2kYG3NH36o+ppEFNfnococc1/fdjMCClFKY5d/UlenEGsn78R8CzX5MnGGN6y+e1KVTqesL86b3EJWF+ACh9ajMrHDALCRv09NH45P5D5SVZOzNULNK5OwK83I8nzcMgh0RqT/UVxci+75T5j9O3qkJhj70oiLVT6G1M+vDVSu7PflEAREG5xA+UoBk3yfPFNd1HjNy8i5zLVBws11QjwPe9CdgB2Lx+8Iv5Nly5QDQHmBV/tEL0eiWlwGgf6bfaeLKCFhpbhMmq4vwwWu0/f5Cp/HirNKuLoSpobM="
         secret_access_key:
