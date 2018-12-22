@@ -1,0 +1,14 @@
+# language: node_js
+# jobs:
+#   include:
+#     - stage: build & deploy
+#       before_script: bash scripts/travisPrepForDeployment.sh
+#       script: yarn build
+#       deploy:
+#         skip_cleanup: true
+#         provider: heroku
+#         api_key:
+#           secure: [MY_API_ENCRYPTED_KEY]
+#         app: [APP_NAME]
+#         on:
+#           repo: ninth-mind/[APP_NAME]
