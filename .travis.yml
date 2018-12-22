@@ -1,14 +1,21 @@
-# language: node_js
-# jobs:
-#   include:
-#     - stage: build & deploy
-#       before_script: bash scripts/travisPrepForDeployment.sh
-#       script: yarn build
-#       deploy:
-#         skip_cleanup: true
-#         provider: heroku
-#         api_key:
-#           secure: [MY_API_ENCRYPTED_KEY]
-#         app: [APP_NAME]
-#         on:
-#           repo: ninth-mind/[APP_NAME]
+language: node_js
+jobs:
+  include:
+    - stage: build & deploy
+      script: yarn build
+      deploy:
+        provider: elasticbeanstalk
+        skip_cleanup: true
+        edge:
+          branch: ebignore
+        access_key_id:
+          secure: secure: "VX6KdMxxm8xeIAPdIGJS7wyu7lhzbJHzzdsEVTm0dVDv3ZM7/CeLOdbfDwlBSOaGgPIfmQ5KUuKhWhZgRIz7Nw1Mrzzn8GteDdFMWg64WwgOL+f3GVquYyB7BjYdcdbqddD9BQ7dl9SrMG3/3+X362y7X4KQsxhOeetHzIuppHIgOkCLru/XzafA4B/w1ATCXD3arySFnPK5bWMddOlnQgqpV5oM5YIciZmLLekMbtaA81DhVKJiMoBfEtfv+7VlWjRZr0obRVPgPG4GTpWjU3XPC3/k5y1+QPMyJULC7Iqe2qgel4DYE0PD7ZHCsFV1Vis9dhLtfkvll4Pm1u6z1T2bW8iY69eqIaIyJZtCV5+0zRkCFdIVE99qcG3YVS5MlbRHW2kYG3NH36o+ppEFNfnococc1/fdjMCClFKY5d/UlenEGsn78R8CzX5MnGGN6y+e1KVTqesL86b3EJWF+ACh9ajMrHDALCRv09NH45P5D5SVZOzNULNK5OwK83I8nzcMgh0RqT/UVxci+75T5j9O3qkJhj70oiLVT6G1M+vDVSu7PflEAREG5xA+UoBk3yfPFNd1HjNy8i5zLVBws11QjwPe9CdgB2Lx+8Iv5Nly5QDQHmBV/tEL0eiWlwGgf6bfaeLKCFhpbhMmq4vwwWu0/f5Cp/HirNKuLoSpobM="
+        secret_access_key:
+          secure: "Fpf4rViXaoMJvOLpeVk7A2O52G/2Lp54L9EbWzhaRE3yKshvhlER+ikb2NqTuv0IL6iYbLPiyWsDwMwKkDZUCci75H06Qgdh3oJGurZr38e66eLRsZz3xpQx6M/OvaiE3NWZpNtV9zQWnItXQ5ONrpCNdn/r77yvOOrSPz1JvtDsCXcpI9nLnP5OWIyVytrP4dd8n4MpQIWF9nrGUG9lVfiYUNHqeXtrQLAMkjEMepd9ghrC8xwrZ8/uBtjAQU0z8TIEpvcM0hof5DUWUr6lpqe6HOfYu+3BuBXfBSzeKhWBWaNPCcGFL8QJrTCeLrIHlj+Vbz4JHuQ0sLTIDHxzEPzwtwzqT8oJ+P71spKrWx6Pogn4XBUSiHTqTdXe9GTRUE8TeZQcKEhgx34fV8EwwxbEK8dn4HAKHR9RDgi3TlFNWWnRRXdxXYIQ1Q0Dhj9Y3WqCwnJlTxnpRUccR+jpMQh4eIHxNAoHrLhv+Bo2zSUGEMHF/ycj9T3v0cxpQxXCtFsPDDhFFXzrg2jqmd5bvojEH59yLvyDscKp1nRA9lsUxe04eNkCkO5rMztghyDB9xjTPB5WdJYD2OOPznIjObLWjHUWpZKg8dqOtVKZSm7Nb6eQCMaFcEHJhhO7lHfQRINQqOVZB1S846xlTjPZpgE1xCLwD5rtRqZJa3uJPRY="
+        region: "us-east-1"
+        app: travis-test
+        env: TravisTest-env
+        bucket_name: elasticbeanstalk-us-east-1-708373466372
+        bucket_path: application-deployments
+        on:
+          repo: ninth-mind/travis-test
